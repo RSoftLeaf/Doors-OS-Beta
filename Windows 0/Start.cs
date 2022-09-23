@@ -15,9 +15,16 @@ namespace Windows_0
     public partial class Start : Form
     {
         SoundPlayer startupPlayer = new SoundPlayer(@"C:\Shindaaaaa\SystemFiles.32\Audio\StartupAndShutdown\Startup.wav");
+        int screenWidth;
+        int screenHeight;
+        Size formSize;
         public Start()
         {
             InitializeComponent();
+            screenWidth = Screen.PrimaryScreen.Bounds.Width;
+            screenHeight = Screen.PrimaryScreen.Bounds.Height;
+            formSize = new System.Drawing.Size(screenWidth, screenHeight);
+            this.Size = formSize;
             Async();
         }
         async void Async()

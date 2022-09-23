@@ -20,6 +20,7 @@ namespace Windows_0
             InitializeComponent();
             TmrForPass.Tick += TmrForPass_Tick;
             TmrForPass.Start();
+            customProgressBar1.Value = 0;
         }
 
         private void TmrForPass_Tick(object sender, EventArgs e)
@@ -30,10 +31,22 @@ namespace Windows_0
                 Pass.UseSystemPasswordChar = true;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private async void button1_Click(object sender, EventArgs e)
         {
             if (User.Text == UserName.ToString() && Pass.Text == PassWord.ToString())
             {
+                try
+                {
+                    for (int i = 0; i < customProgressBar1.Maximum; i++)
+                    {
+                        customProgressBar1.Value += 1;
+                        await Task.Delay(100);
+                    }
+                }
+                catch
+                {
+
+                }
                 Form1 formWindows = new Form1(true);
                 formWindows.Show();
                 this.Visible = false;
@@ -56,6 +69,11 @@ namespace Windows_0
             //Application.Exit();
             Shutdown shutdown = new Shutdown("Выключение");
             shutdown.Show();
+        }
+
+        private void customProgressBar1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

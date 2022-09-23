@@ -31,6 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panelTask = new System.Windows.Forms.Panel();
+            this.contextMenuStrip9 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.диспетчерЗадачToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.выйтиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lbDate = new System.Windows.Forms.Label();
             this.lbTime = new System.Windows.Forms.Label();
             this.btnLook = new System.Windows.Forms.Button();
@@ -72,6 +75,7 @@
             this.btnNotePad = new System.Windows.Forms.Button();
             this.btnBrowser = new System.Windows.Forms.Button();
             this.panelTask.SuspendLayout();
+            this.contextMenuStrip9.SuspendLayout();
             this.contextMenuStrip7.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.contextMenuStrip2.SuspendLayout();
@@ -85,6 +89,7 @@
             // 
             this.panelTask.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelTask.BackgroundImage")));
             this.panelTask.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelTask.ContextMenuStrip = this.contextMenuStrip9;
             this.panelTask.Controls.Add(this.lbDate);
             this.panelTask.Controls.Add(this.lbTime);
             this.panelTask.Controls.Add(this.btnLook);
@@ -98,6 +103,28 @@
             this.panelTask.Name = "panelTask";
             this.panelTask.Size = new System.Drawing.Size(1929, 44);
             this.panelTask.TabIndex = 4;
+            // 
+            // contextMenuStrip9
+            // 
+            this.contextMenuStrip9.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.диспетчерЗадачToolStripMenuItem1,
+            this.выйтиToolStripMenuItem});
+            this.contextMenuStrip9.Name = "contextMenuStrip9";
+            this.contextMenuStrip9.Size = new System.Drawing.Size(167, 48);
+            // 
+            // диспетчерЗадачToolStripMenuItem1
+            // 
+            this.диспетчерЗадачToolStripMenuItem1.Name = "диспетчерЗадачToolStripMenuItem1";
+            this.диспетчерЗадачToolStripMenuItem1.Size = new System.Drawing.Size(166, 22);
+            this.диспетчерЗадачToolStripMenuItem1.Text = "Диспетчер задач";
+            this.диспетчерЗадачToolStripMenuItem1.Click += new System.EventHandler(this.диспетчерЗадачToolStripMenuItem1_Click);
+            // 
+            // выйтиToolStripMenuItem
+            // 
+            this.выйтиToolStripMenuItem.Name = "выйтиToolStripMenuItem";
+            this.выйтиToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.выйтиToolStripMenuItem.Text = "Выйти";
+            this.выйтиToolStripMenuItem.Click += new System.EventHandler(this.выйтиToolStripMenuItem_Click);
             // 
             // lbDate
             // 
@@ -475,6 +502,7 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panelTask.ResumeLayout(false);
             this.panelTask.PerformLayout();
+            this.contextMenuStrip9.ResumeLayout(false);
             this.contextMenuStrip7.ResumeLayout(false);
             this.contextMenuStrip1.ResumeLayout(false);
             this.contextMenuStrip2.ResumeLayout(false);
@@ -528,5 +556,8 @@
         private Label lbDate;
         private Label lbTime;
         private Button btnBrowser;
+        private ContextMenuStrip contextMenuStrip9;
+        private ToolStripMenuItem диспетчерЗадачToolStripMenuItem1;
+        private ToolStripMenuItem выйтиToolStripMenuItem;
     }
 }

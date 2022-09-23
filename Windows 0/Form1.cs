@@ -26,9 +26,12 @@ namespace Windows_0
         System.Drawing.Size defPanelSize = new System.Drawing.Size(1929, 44);
         System.Drawing.Size smallPanelSize = new System.Drawing.Size(1929, 40);
         System.Drawing.Point defbtnLookLocation = new System.Drawing.Point(164, 12);
-        System.Drawing.Point smallbtnLookLocation = new System.Drawing.Point(164, 15);
+        System.Drawing.Point smallbtnLookLocation = new System.Drawing.Point(164, 10);
         System.Drawing.Size defbtnStartSize = new System.Drawing.Size(43, 44);
-        System.Drawing.Size smallbtnStartSize = new System.Drawing.Size(40, 40);
+        System.Drawing.Size smallbtnStartSize = new System.Drawing.Size(35, 35);
+        System.Drawing.Point defPanelTaskLocation = new System.Drawing.Point(-5, 1035);
+        System.Drawing.Point smallPanelTaskLocation = new System.Drawing.Point(-5, 1044);
+        
 
         #endregion
         public Form1(bool play)
@@ -59,7 +62,7 @@ namespace Windows_0
 
             #region TASK PANEL
             //-------------------------------------------------------------
-
+            
             switch (panelBig)
             {
                 
@@ -81,6 +84,7 @@ namespace Windows_0
                         btnLook.Location = defbtnLookLocation;
                         btnSTART.Size = defbtnStartSize;
                         panelTask.Size = defPanelSize;
+                        panelTask.Location = defPanelTaskLocation;
                         break;
                     }
                 case false:
@@ -101,6 +105,7 @@ namespace Windows_0
                         btnLook.Location = smallbtnLookLocation;
                         btnSTART.Size = smallbtnStartSize;
                         panelTask.Size = smallPanelSize;
+                        panelTask.Location = smallPanelTaskLocation;
                         break;
                     }
             }
@@ -529,8 +534,17 @@ namespace Windows_0
                     }
                 case "Panel Settings":
                     {
+                        panelButtonsLength = 30; //Default == 35
                         TaskPanelSettings taskPanelSettings = new TaskPanelSettings(this);
                         taskPanelSettings.Show();
+                        if (panelTask.Size == smallPanelSize)
+                        {
+
+                        }
+                        else if (panelTask.Size == defPanelSize)
+                        {
+
+                        }
                         break;
                     }
             }
@@ -556,6 +570,19 @@ namespace Windows_0
         private void btnBrowser_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void âûéòèToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Avtorize av = new Avtorize();
+            av.Show();
+        }
+
+        private void äèñïåò÷åðÇàäà÷ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            TaskManager taskManager = new TaskManager();
+            taskManager.Show();
         }
     }
 }

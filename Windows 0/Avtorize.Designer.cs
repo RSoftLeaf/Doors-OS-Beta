@@ -37,6 +37,7 @@
             this.Shotdown = new System.Windows.Forms.Button();
             this.ReStart = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.customProgressBar1 = new Windows_0.CustomProgressBar();
             this.SuspendLayout();
             // 
             // User
@@ -120,6 +121,14 @@
             this.checkBox1.Text = "Показать пароль";
             this.checkBox1.UseVisualStyleBackColor = false;
             // 
+            // customProgressBar1
+            // 
+            this.customProgressBar1.Location = new System.Drawing.Point(795, 459);
+            this.customProgressBar1.Name = "customProgressBar1";
+            this.customProgressBar1.Size = new System.Drawing.Size(482, 23);
+            this.customProgressBar1.TabIndex = 6;
+            this.customProgressBar1.Click += new System.EventHandler(this.customProgressBar1_Click);
+            // 
             // Avtorize
             // 
             this.AcceptButton = this.button1;
@@ -128,6 +137,7 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.Controls.Add(this.customProgressBar1);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.ReStart);
             this.Controls.Add(this.Shotdown);
@@ -155,5 +165,6 @@
         private Button Shotdown;
         private Button ReStart;
         private CheckBox checkBox1;
+        private CustomProgressBar customProgressBar1;
     }
 }
