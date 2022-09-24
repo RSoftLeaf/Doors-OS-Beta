@@ -18,6 +18,7 @@ namespace Windows_0
         SoundPlayer Error = new SoundPlayer(@"C:\Shindaaaaa\SystemFiles.32\Audio\Error\Windows-10-Error-Sound.wav");
         SoundPlayer WelcomeToDoors = new SoundPlayer(@"C:\Shindaaaaa\SystemFiles.32\Audio\Welcome\Welcome.wav");
         System.Windows.Forms.Timer timer;
+        System.Windows.Forms.Timer tmrStartMenuFocus;
         public int panelStartLength { get; set; }
         public int panelButtonsLength { get; set; }
         public int panelTextSize { get; set; }
@@ -31,7 +32,7 @@ namespace Windows_0
         System.Drawing.Size smallbtnStartSize = new System.Drawing.Size(35, 35);
         System.Drawing.Point defPanelTaskLocation = new System.Drawing.Point(-5, 1035);
         System.Drawing.Point smallPanelTaskLocation = new System.Drawing.Point(-5, 1044);
-        
+        StartMenu varStartMenu = new StartMenu();
 
         #endregion
         public Form1(bool play)
@@ -42,12 +43,12 @@ namespace Windows_0
             SnapCamera = @"C:\Shindaaaaa\SystemFiles.32\Programs\Snap Camera\Snap Camera.exe";
             TotalCMD = @"C:\Shindaaaaa\SystemFiles.32\Programs\TotalCMD\Totalcmd64.exe";
             timer = new System.Windows.Forms.Timer();
-            timer.Tick += Timer_Tick;
+            tmrStartMenuFocus = new System.Windows.Forms.Timer();
             if (play == true)
             {
                 WelcomeToDoors.Play();
             }
-            timer.Interval = 1000;
+            Initialize(true);
             Sync();
         }
         public void Initialize(bool panelBig)
@@ -112,7 +113,28 @@ namespace Windows_0
 
             //-----------------------------------------------------------*/
             #endregion
+
+            #region TIMER INITIALIZE
+            //-------------------------------------------------------------
+
+            timer.Tick += Timer_Tick;
+            tmrStartMenuFocus.Tick += TmrStartMenuFocus_Tick;
+            tmrStartMenuFocus.Start();
+            timer.Interval = 1000;
+            tmrStartMenuFocus.Interval = 10;
+
+            //-----------------------------------------------------------*/
+            #endregion
         }
+
+        private void TmrStartMenuFocus_Tick(object sender, EventArgs e)
+        {
+            if (!varStartMenu.Focus())
+            {
+                varStartMenu.Close();
+            }
+        }
+
         private void Timer_Tick(object sender, EventArgs e)
         {
             DateTime date = DateTime.Now;
@@ -423,7 +445,7 @@ namespace Windows_0
         private void btnSTART_MouseDown(object sender, MouseEventArgs e)
         {
             //Location = new Point(btnSTART.Location.X, btnSTART.Location.Y);
-            contextMenuStrip1.Show(panelTask.Location.X, panelTask.Location.Y - btnSTART.Height / 2);
+            //contextMenuStrip1.Show(panelTask.Location.X, panelTask.Location.Y - btnSTART.Height / 2);
         }
         private void btnLook_Click(object sender, EventArgs e)
         {
@@ -583,6 +605,22 @@ namespace Windows_0
         {
             TaskManager taskManager = new TaskManager();
             taskManager.Show();
+        }
+
+        private async void btnSTART_Click(object sender, EventArgs e)
+        {
+            StartMenu startMenu = new StartMenu();
+            startMenu.Show();
+            startMenu.Location = new System.Drawing.Point(0, panel1.Location.Y + 100);
+            startMenu.Size = new System.Drawing.Size(700, 500);
+            startMenu.Opacity = 0;
+            for (int i = 0; i < 50; i++)
+            {
+                //await Task.Delay(1);
+                startMenu.Size = new System.Drawing.Size(startMenu.Size.Width, startMenu.Size.Height + 2);
+                startMenu.Location = new System.Drawing.Point(startMenu.Location.X, startMenu.Location.Y - 2);
+                startMenu.Opacity += 0.02;
+            }
         }
     }
 }

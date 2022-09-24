@@ -74,6 +74,7 @@
             this.btnFileManager = new System.Windows.Forms.Button();
             this.btnNotePad = new System.Windows.Forms.Button();
             this.btnBrowser = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panelTask.SuspendLayout();
             this.contextMenuStrip9.SuspendLayout();
             this.contextMenuStrip7.SuspendLayout();
@@ -247,6 +248,7 @@
             this.btnSTART.Size = new System.Drawing.Size(43, 45);
             this.btnSTART.TabIndex = 0;
             this.btnSTART.UseVisualStyleBackColor = false;
+            this.btnSTART.Click += new System.EventHandler(this.btnSTART_Click);
             this.btnSTART.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnSTART_MouseDown);
             // 
             // contextMenuStrip1
@@ -480,6 +482,14 @@
             this.btnBrowser.UseVisualStyleBackColor = true;
             this.btnBrowser.Click += new System.EventHandler(this.btnBrowser_Click);
             // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(0, 437);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(223, 195);
+            this.panel1.TabIndex = 13;
+            this.panel1.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -495,6 +505,7 @@
             this.Controls.Add(this.btnCMD);
             this.Controls.Add(this.btnCalc);
             this.Controls.Add(this.panelTask);
+            this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
@@ -559,5 +570,6 @@
         private ContextMenuStrip contextMenuStrip9;
         private ToolStripMenuItem диспетчерЗадачToolStripMenuItem1;
         private ToolStripMenuItem выйтиToolStripMenuItem;
+        private Panel panel1;
     }
 }
