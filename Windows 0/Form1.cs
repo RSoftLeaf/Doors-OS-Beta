@@ -19,6 +19,7 @@ namespace Windows_0
         SoundPlayer WelcomeToDoors = new SoundPlayer(@"C:\Shindaaaaa\SystemFiles.32\Audio\Welcome\Welcome.wav");
         System.Windows.Forms.Timer timer;
         System.Windows.Forms.Timer tmrStartMenuFocus;
+        System.Windows.Forms.Timer tmrStartMenuFocudfs;
         public int panelStartLength { get; set; }
         public int panelButtonsLength { get; set; }
         public int panelTextSize { get; set; }
@@ -230,7 +231,7 @@ namespace Windows_0
                 DialogResult resDialogMes = MessageBox.Show($"{CalcuLator}. Не найден исполняемый файл. Вы хотите удалить ярлык?", "Не найден ярлык", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
                 switch (resDialogMes)
                 {
-                    case DialogResult.Yes: btnpanelCalc.Dispose(); break;
+                    case DialogResult.Yes:  btnpanelCalc.Dispose(); break;
                     case DialogResult.No: MessageBox.Show("OK"); break;
                 }
             }

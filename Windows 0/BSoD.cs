@@ -21,12 +21,13 @@ namespace Windows_0
 
         private async void BSoD_Load(object sender, EventArgs e)
         {
-            while (Vitsotki != 100)
+            while (Vitsotki != 101)
             {
                 label2.Text = $"File recovery: {Vitsotki} %";
-                await Task.Delay(random.Next(300));
+                await Task.Delay(random.Next(500));
                 Vitsotki++;
             }
+            Application.Restart();
         }
     }
 }
