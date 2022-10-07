@@ -17,6 +17,8 @@ namespace Windows_0
         public string TotalCMD { get; set; }
         SoundPlayer Error = new SoundPlayer(@"C:\Shindaaaaa\SystemFiles.32\Audio\Error\Windows-10-Error-Sound.wav");
         SoundPlayer WelcomeToDoors = new SoundPlayer(@"C:\Shindaaaaa\SystemFiles.32\Audio\Welcome\Welcome.wav");
+        //SoundPlayer spAudio=new SoundPlayer(@"C:\Shindaaaaa\SystemFiles.32\Audio\Power\w10PowerSound.wav");
+        SoundPlayer spAudio = new SoundPlayer(@"C:\Shindaaaaa\SystemFiles.32\Audio\Power\w10PowerSound2.wav");
         System.Windows.Forms.Timer timer;
         System.Windows.Forms.Timer tmrStartMenuFocus;
         System.Windows.Forms.Timer tmrStartMenuFocudfs;
@@ -34,6 +36,13 @@ namespace Windows_0
         System.Drawing.Point defPanelTaskLocation = new System.Drawing.Point(-5, 1035);
         System.Drawing.Point smallPanelTaskLocation = new System.Drawing.Point(-5, 1044);
         StartMenu varStartMenu = new StartMenu();
+        PowerForm powerForm;
+        public int PowerProcents = 100;
+        System.Windows.Forms.Timer PowerTimer = new System.Windows.Forms.Timer();
+        public bool Power = false;
+        public int screenWidth = Screen.PrimaryScreen.Bounds.Width;
+        public int screenHeight = Screen.PrimaryScreen.Bounds.Height;
+               
 
         #endregion
         public Form1(bool play)
@@ -51,7 +60,43 @@ namespace Windows_0
             }
             Initialize(true);
             Sync();
+            powerForm = new PowerForm(this);
         }
+
+        private void PowerTimer_Tick(object sender, EventArgs e)
+        {
+            if (!Power)
+            {
+                if (customProgressBar1.Value > 0)
+                {
+                    customProgressBar1.Value--;
+                    PowerProcents--;
+                }
+                if (PowerProcents == 0)
+                {
+                    Shutdown shutdown = new Shutdown("Гибернация (нет)");
+                    shutdown.Show();
+                    PowerTimer.Stop();
+                }
+                if (PowerProcents == 85)
+                {
+                    PowerWarning powerWarning = new PowerWarning(this);
+                    powerWarning.Show();
+                    powerWarning.Location = new System.Drawing.Point(this.Size.Width / 2 - powerWarning.Size.Width / 2, this.Size.Height / 2 - powerWarning.Size.Width / 2);
+                    spAudio.Play();
+                }
+            }
+            else
+            {
+                if (customProgressBar1.Value < 100)
+                {
+                    customProgressBar1.Value++;
+                    PowerProcents++;
+                }
+            }
+            label1.Text = customProgressBar1.Value.ToString() + ", " + PowerProcents.ToString();
+        }
+
         public void Initialize(bool panelBig)
         {
             #region EMPTY
@@ -123,6 +168,9 @@ namespace Windows_0
             tmrStartMenuFocus.Start();
             timer.Interval = 1000;
             tmrStartMenuFocus.Interval = 10;
+            PowerTimer.Tick += PowerTimer_Tick;
+            PowerTimer.Start();
+            PowerTimer.Interval = 1000;
 
             //-----------------------------------------------------------*/
             #endregion
@@ -622,6 +670,13 @@ namespace Windows_0
                 startMenu.Location = new System.Drawing.Point(startMenu.Location.X, startMenu.Location.Y - 2);
                 startMenu.Opacity += 0.02;
             }
+        }
+
+        private void customProgressBar1_Click(object sender, EventArgs e)
+        {
+            PowerForm powerfrm = new PowerForm(this);
+            powerfrm.Show();
+
         }
     }
 }

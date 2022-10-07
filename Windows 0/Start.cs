@@ -18,14 +18,24 @@ namespace Windows_0
         int screenWidth;
         int screenHeight;
         Size formSize;
-        public Start()
+        public Start(string status)
         {
             InitializeComponent();
-            screenWidth = Screen.PrimaryScreen.Bounds.Width;
-            screenHeight = Screen.PrimaryScreen.Bounds.Height;
-            formSize = new System.Drawing.Size(screenWidth, screenHeight);
-            this.Size = formSize;
-            Async();
+            if (status == "Release")
+            {
+                screenWidth = Screen.PrimaryScreen.Bounds.Width;
+                screenHeight = Screen.PrimaryScreen.Bounds.Height;
+                formSize = new System.Drawing.Size(screenWidth, screenHeight);
+                this.Size = formSize;
+                Async();
+            }
+            else if (status == "DEBUG")
+            {
+
+                Form1 mainForm = new Form1(false);
+                mainForm.Show();
+                this.Visible = false;
+            }
         }
         async void Async()
         {

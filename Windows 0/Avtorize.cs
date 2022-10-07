@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -35,12 +36,16 @@ namespace Windows_0
         {
             if (User.Text == UserName.ToString() && Pass.Text == PassWord.ToString())
             {
+                for (int i = 0; i < 100; i++)
+                {
+                    
+                }
                 try
                 {
                     for (int i = 0; i < customProgressBar1.Maximum; i++)
                     {
                         customProgressBar1.Value += 1;
-                        await Task.Delay(100);
+                        await Task.Delay(10);
                     }
                 }
                 catch

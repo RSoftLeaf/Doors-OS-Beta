@@ -34,6 +34,8 @@
             this.contextMenuStrip9 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.диспетчерЗадачToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.выйтиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
+            this.customProgressBar1 = new Windows_0.CustomProgressBar();
             this.lbDate = new System.Windows.Forms.Label();
             this.lbTime = new System.Windows.Forms.Label();
             this.btnLook = new System.Windows.Forms.Button();
@@ -75,6 +77,7 @@
             this.btnNotePad = new System.Windows.Forms.Button();
             this.btnBrowser = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panelTask.SuspendLayout();
             this.contextMenuStrip9.SuspendLayout();
             this.contextMenuStrip7.SuspendLayout();
@@ -91,6 +94,8 @@
             this.panelTask.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelTask.BackgroundImage")));
             this.panelTask.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panelTask.ContextMenuStrip = this.contextMenuStrip9;
+            this.panelTask.Controls.Add(this.label1);
+            this.panelTask.Controls.Add(this.customProgressBar1);
             this.panelTask.Controls.Add(this.lbDate);
             this.panelTask.Controls.Add(this.lbTime);
             this.panelTask.Controls.Add(this.btnLook);
@@ -126,6 +131,26 @@
             this.выйтиToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.выйтиToolStripMenuItem.Text = "Выйти";
             this.выйтиToolStripMenuItem.Click += new System.EventHandler(this.выйтиToolStripMenuItem_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(1592, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(38, 15);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "label1";
+            // 
+            // customProgressBar1
+            // 
+            this.customProgressBar1.BackColor = System.Drawing.Color.Cyan;
+            this.customProgressBar1.Location = new System.Drawing.Point(1696, 10);
+            this.customProgressBar1.Name = "customProgressBar1";
+            this.customProgressBar1.Size = new System.Drawing.Size(50, 25);
+            this.customProgressBar1.Step = 1;
+            this.customProgressBar1.TabIndex = 14;
+            this.customProgressBar1.Value = 100;
+            this.customProgressBar1.Click += new System.EventHandler(this.customProgressBar1_Click);
             // 
             // lbDate
             // 
@@ -490,12 +515,21 @@
             this.panel1.TabIndex = 13;
             this.panel1.Visible = false;
             // 
+            // panel2
+            // 
+            this.panel2.Location = new System.Drawing.Point(1220, 437);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(700, 600);
+            this.panel2.TabIndex = 14;
+            this.panel2.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnBrowser);
             this.Controls.Add(this.btnNotePad);
             this.Controls.Add(this.btnFileManager);
@@ -526,7 +560,6 @@
         }
 
         #endregion
-        private Panel panelTask;
         private Button btnSTART;
         private ContextMenuStrip contextMenuStrip1;
         private ToolStripMenuItem параметрыToolStripMenuItem;
@@ -571,5 +604,9 @@
         private ToolStripMenuItem диспетчерЗадачToolStripMenuItem1;
         private ToolStripMenuItem выйтиToolStripMenuItem;
         private Panel panel1;
+        private CustomProgressBar customProgressBar1;
+        private Label label1;
+        private Panel panel2;
+        public Panel panelTask;
     }
 }
