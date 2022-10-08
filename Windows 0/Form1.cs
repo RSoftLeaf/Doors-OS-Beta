@@ -42,6 +42,7 @@ namespace Windows_0
         public bool Power = false;
         public int screenWidth = Screen.PrimaryScreen.Bounds.Width;
         public int screenHeight = Screen.PrimaryScreen.Bounds.Height;
+        public MyMethods myMethods = new MyMethods();
                
 
         #endregion
@@ -658,25 +659,16 @@ namespace Windows_0
 
         private async void btnSTART_Click(object sender, EventArgs e)
         {
-            StartMenu startMenu = new StartMenu();
-            startMenu.Show();
-            startMenu.Location = new System.Drawing.Point(0, panel1.Location.Y + 100);
-            startMenu.Size = new System.Drawing.Size(700, 500);
-            startMenu.Opacity = 0;
-            for (int i = 0; i < 50; i++)
-            {
-                //await Task.Delay(1);
-                startMenu.Size = new System.Drawing.Size(startMenu.Size.Width, startMenu.Size.Height + 2);
-                startMenu.Location = new System.Drawing.Point(startMenu.Location.X, startMenu.Location.Y - 2);
-                startMenu.Opacity += 0.02;
-            }
+            myMethods.SetOpacity(new StartMenu(), new Point(panel1.Location.X, panel1.Location.Y + 100));
         }
-
+        
         private void customProgressBar1_Click(object sender, EventArgs e)
         {
-            PowerForm powerfrm = new PowerForm(this);
-            powerfrm.Show();
-
+            //PowerForm powerfrm = new PowerForm(this);
+            //powerfrm.Show();
+            myMethods.SetOpacity(new PowerForm(this), new Point(panel2.Location.X, panel2.Location.Y));
+            
         }
+
     }
 }

@@ -26,7 +26,7 @@ namespace Windows_0
 
         private void Kalendar_Load(object sender, EventArgs e)
         {
-            
+            Form1 form1 = new Form1(false);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
