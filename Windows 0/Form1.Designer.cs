@@ -78,6 +78,7 @@
             this.btnBrowser = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnFileExplorer = new System.Windows.Forms.Button();
             this.panelTask.SuspendLayout();
             this.contextMenuStrip9.SuspendLayout();
             this.contextMenuStrip7.SuspendLayout();
@@ -523,12 +524,23 @@
             this.panel2.TabIndex = 14;
             this.panel2.Visible = false;
             // 
+            // btnFileExplorer
+            // 
+            this.btnFileExplorer.Image = ((System.Drawing.Image)(resources.GetObject("btnFileExplorer.Image")));
+            this.btnFileExplorer.Location = new System.Drawing.Point(12, 337);
+            this.btnFileExplorer.Name = "btnFileExplorer";
+            this.btnFileExplorer.Size = new System.Drawing.Size(36, 35);
+            this.btnFileExplorer.TabIndex = 15;
+            this.btnFileExplorer.UseVisualStyleBackColor = true;
+            this.btnFileExplorer.Click += new System.EventHandler(this.btnFileExplorer_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.Controls.Add(this.btnFileExplorer);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnBrowser);
             this.Controls.Add(this.btnNotePad);
@@ -608,5 +620,6 @@
         private Label label1;
         private Panel panel2;
         public Panel panelTask;
+        private Button btnFileExplorer;
     }
 }

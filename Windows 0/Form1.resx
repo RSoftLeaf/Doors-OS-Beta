@@ -21494,6 +21494,17 @@
         nfW2hwK7zJ14JF59cLpNEW4LqrvtEeOVjFXAfPBlOkuOOzkAnz8qwvaJHiq/9AAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="btnFileExplorer.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        6gAAAOoB+Ss1JgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAADySURBVFhH7dUx
+        agJhEIbhJZZiEURQsJB0VjY2ISDYeAIttAmBYOUNbEVM6QWCtYhg4xEEa29gH8uUSd5pw/yzsDsLFv8L
+        T/nBsOyySSwW+1cf0wwmeEDuzvjN6BO5j8hzgJAjngKaSC3vAWnkELOiD2jDTA7YoYHHApRgJgd0ccCt
+        IFsEkwMq+IL2CD2YB+xRgzb0skCwD7xAG3p5RbB3vEEbenlGsB6W0IZeqghWh3yG2tCDvNypXaCNPZxg
+        Jj+Tb2hjDxuYtaANvcxhNoA29DKC2Qza0EsHZmtoQw8/KMPsCG3s4YrUhlgVZIxY7N5Kkj846rCw0EQD
+        6wAAAABJRU5ErkJggg==
+</value>
+  </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>79</value>
   </metadata>
