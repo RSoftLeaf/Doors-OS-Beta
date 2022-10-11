@@ -672,7 +672,7 @@ namespace Windows_0
 
         private void btnFileExplorer_Click(object sender, EventArgs e)
         {
-            Explorer fileExplorer = new Explorer();
+            Explorer fileExplorer = new Explorer(this);
             fileExplorer.Show();
         }
     }
