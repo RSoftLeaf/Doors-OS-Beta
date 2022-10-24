@@ -18,6 +18,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		MyVoids.cs = MyVoids.cs
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp1", "WindowsFormsApp1\WindowsFormsApp1.csproj", "{F78C9375-A11D-45DC-8439-BD97458009A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoorsBeta", "..\..\DoorsBeta\DoorsBeta.csproj", "{FEB12D47-AD85-47B5-BA67-3DF1C6FBFB3F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,6 +48,14 @@ Global
 		{D0E749B7-BDE0-4A38-AC5D-5A213521145A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D0E749B7-BDE0-4A38-AC5D-5A213521145A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D0E749B7-BDE0-4A38-AC5D-5A213521145A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F78C9375-A11D-45DC-8439-BD97458009A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F78C9375-A11D-45DC-8439-BD97458009A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F78C9375-A11D-45DC-8439-BD97458009A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F78C9375-A11D-45DC-8439-BD97458009A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FEB12D47-AD85-47B5-BA67-3DF1C6FBFB3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEB12D47-AD85-47B5-BA67-3DF1C6FBFB3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEB12D47-AD85-47B5-BA67-3DF1C6FBFB3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEB12D47-AD85-47B5-BA67-3DF1C6FBFB3F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

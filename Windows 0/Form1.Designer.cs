@@ -34,16 +34,18 @@
             this.contextMenuStrip9 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.диспетчерЗадачToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.выйтиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label1 = new System.Windows.Forms.Label();
+            this.btnPanelSettings = new System.Windows.Forms.Button();
+            this.contextMenuStrip7 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem8 = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnPanelExplorer = new System.Windows.Forms.Button();
+            this.lbLang = new System.Windows.Forms.Label();
             this.customProgressBar1 = new Windows_0.CustomProgressBar();
             this.lbDate = new System.Windows.Forms.Label();
             this.lbTime = new System.Windows.Forms.Label();
             this.btnLook = new System.Windows.Forms.Button();
             this.tbProgram = new System.Windows.Forms.TextBox();
             this.btnpanelSnap = new System.Windows.Forms.Button();
-            this.contextMenuStrip7 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem8 = new System.Windows.Forms.ToolStripMenuItem();
             this.btnpanelPhotoShop = new System.Windows.Forms.Button();
             this.btnpanelCMD = new System.Windows.Forms.Button();
             this.btnpanelCalc = new System.Windows.Forms.Button();
@@ -79,6 +81,13 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnFileExplorer = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.cmsTaskPanel = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.taskManagerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem9 = new System.Windows.Forms.ToolStripSeparator();
+            this.showToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button2 = new System.Windows.Forms.Button();
+            this.pnlShortcut = new System.Windows.Forms.Panel();
             this.panelTask.SuspendLayout();
             this.contextMenuStrip9.SuspendLayout();
             this.contextMenuStrip7.SuspendLayout();
@@ -88,14 +97,16 @@
             this.contextMenuStrip4.SuspendLayout();
             this.contextMenuStrip6.SuspendLayout();
             this.contextMenuStrip8.SuspendLayout();
+            this.cmsTaskPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelTask
             // 
             this.panelTask.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelTask.BackgroundImage")));
-            this.panelTask.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panelTask.ContextMenuStrip = this.contextMenuStrip9;
-            this.panelTask.Controls.Add(this.label1);
+            this.panelTask.Controls.Add(this.btnPanelSettings);
+            this.panelTask.Controls.Add(this.btnPanelExplorer);
+            this.panelTask.Controls.Add(this.lbLang);
             this.panelTask.Controls.Add(this.customProgressBar1);
             this.panelTask.Controls.Add(this.lbDate);
             this.panelTask.Controls.Add(this.lbTime);
@@ -106,9 +117,10 @@
             this.panelTask.Controls.Add(this.btnpanelCMD);
             this.panelTask.Controls.Add(this.btnpanelCalc);
             this.panelTask.Controls.Add(this.btnSTART);
-            this.panelTask.Location = new System.Drawing.Point(-5, 1035);
+            this.panelTask.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelTask.Location = new System.Drawing.Point(0, 1036);
             this.panelTask.Name = "panelTask";
-            this.panelTask.Size = new System.Drawing.Size(1929, 44);
+            this.panelTask.Size = new System.Drawing.Size(1920, 44);
             this.panelTask.TabIndex = 4;
             // 
             // contextMenuStrip9
@@ -133,14 +145,64 @@
             this.выйтиToolStripMenuItem.Text = "Выйти";
             this.выйтиToolStripMenuItem.Click += new System.EventHandler(this.выйтиToolStripMenuItem_Click);
             // 
-            // label1
+            // btnPanelSettings
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(1592, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 15);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "label1";
+            this.btnPanelSettings.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPanelSettings.BackgroundImage")));
+            this.btnPanelSettings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnPanelSettings.ContextMenuStrip = this.contextMenuStrip7;
+            this.btnPanelSettings.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnPanelSettings.Location = new System.Drawing.Point(379, 4);
+            this.btnPanelSettings.Name = "btnPanelSettings";
+            this.btnPanelSettings.Size = new System.Drawing.Size(35, 35);
+            this.btnPanelSettings.TabIndex = 19;
+            this.btnPanelSettings.UseVisualStyleBackColor = true;
+            this.btnPanelSettings.Click += new System.EventHandler(this.btnPanelSettings_Click);
+            // 
+            // contextMenuStrip7
+            // 
+            this.contextMenuStrip7.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem7,
+            this.toolStripMenuItem8});
+            this.contextMenuStrip7.Name = "contextMenuStrip2";
+            this.contextMenuStrip7.Size = new System.Drawing.Size(143, 48);
+            // 
+            // toolStripMenuItem7
+            // 
+            this.toolStripMenuItem7.Name = "toolStripMenuItem7";
+            this.toolStripMenuItem7.Size = new System.Drawing.Size(142, 22);
+            this.toolStripMenuItem7.Text = "Open";
+            this.toolStripMenuItem7.Click += new System.EventHandler(this.toolStripMenuItem7_Click);
+            // 
+            // toolStripMenuItem8
+            // 
+            this.toolStripMenuItem8.Name = "toolStripMenuItem8";
+            this.toolStripMenuItem8.Size = new System.Drawing.Size(142, 22);
+            this.toolStripMenuItem8.Text = "Open Admin";
+            this.toolStripMenuItem8.Click += new System.EventHandler(this.toolStripMenuItem8_Click);
+            // 
+            // btnPanelExplorer
+            // 
+            this.btnPanelExplorer.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPanelExplorer.BackgroundImage")));
+            this.btnPanelExplorer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnPanelExplorer.ContextMenuStrip = this.contextMenuStrip7;
+            this.btnPanelExplorer.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnPanelExplorer.Location = new System.Drawing.Point(420, 4);
+            this.btnPanelExplorer.Name = "btnPanelExplorer";
+            this.btnPanelExplorer.Size = new System.Drawing.Size(35, 35);
+            this.btnPanelExplorer.TabIndex = 18;
+            this.btnPanelExplorer.UseVisualStyleBackColor = true;
+            this.btnPanelExplorer.Click += new System.EventHandler(this.btnPanelExplorer_Click);
+            // 
+            // lbLang
+            // 
+            this.lbLang.AutoSize = true;
+            this.lbLang.BackColor = System.Drawing.Color.Transparent;
+            this.lbLang.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lbLang.Location = new System.Drawing.Point(1652, 16);
+            this.lbLang.Name = "lbLang";
+            this.lbLang.Size = new System.Drawing.Size(38, 15);
+            this.lbLang.TabIndex = 15;
+            this.lbLang.Text = "label1";
             // 
             // customProgressBar1
             // 
@@ -177,9 +239,10 @@
             // 
             // btnLook
             // 
-            this.btnLook.Location = new System.Drawing.Point(164, 12);
+            this.btnLook.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnLook.Location = new System.Drawing.Point(143, 0);
             this.btnLook.Name = "btnLook";
-            this.btnLook.Size = new System.Drawing.Size(75, 23);
+            this.btnLook.Size = new System.Drawing.Size(75, 44);
             this.btnLook.TabIndex = 12;
             this.btnLook.Text = "Найти";
             this.btnLook.UseVisualStyleBackColor = true;
@@ -187,10 +250,12 @@
             // 
             // tbProgram
             // 
+            this.tbProgram.Dock = System.Windows.Forms.DockStyle.Left;
             this.tbProgram.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tbProgram.Location = new System.Drawing.Point(52, 9);
+            this.tbProgram.Location = new System.Drawing.Point(43, 0);
+            this.tbProgram.Multiline = true;
             this.tbProgram.Name = "tbProgram";
-            this.tbProgram.Size = new System.Drawing.Size(100, 29);
+            this.tbProgram.Size = new System.Drawing.Size(100, 44);
             this.tbProgram.TabIndex = 11;
             // 
             // btnpanelSnap
@@ -198,41 +263,19 @@
             this.btnpanelSnap.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnpanelSnap.BackgroundImage")));
             this.btnpanelSnap.ContextMenuStrip = this.contextMenuStrip7;
             this.btnpanelSnap.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnpanelSnap.Location = new System.Drawing.Point(367, 6);
+            this.btnpanelSnap.Location = new System.Drawing.Point(338, 4);
             this.btnpanelSnap.Name = "btnpanelSnap";
             this.btnpanelSnap.Size = new System.Drawing.Size(35, 35);
             this.btnpanelSnap.TabIndex = 10;
             this.btnpanelSnap.UseVisualStyleBackColor = true;
             this.btnpanelSnap.Click += new System.EventHandler(this.button13_Click);
             // 
-            // contextMenuStrip7
-            // 
-            this.contextMenuStrip7.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem7,
-            this.toolStripMenuItem8});
-            this.contextMenuStrip7.Name = "contextMenuStrip2";
-            this.contextMenuStrip7.Size = new System.Drawing.Size(143, 48);
-            // 
-            // toolStripMenuItem7
-            // 
-            this.toolStripMenuItem7.Name = "toolStripMenuItem7";
-            this.toolStripMenuItem7.Size = new System.Drawing.Size(142, 22);
-            this.toolStripMenuItem7.Text = "Open";
-            this.toolStripMenuItem7.Click += new System.EventHandler(this.toolStripMenuItem7_Click);
-            // 
-            // toolStripMenuItem8
-            // 
-            this.toolStripMenuItem8.Name = "toolStripMenuItem8";
-            this.toolStripMenuItem8.Size = new System.Drawing.Size(142, 22);
-            this.toolStripMenuItem8.Text = "Open Admin";
-            this.toolStripMenuItem8.Click += new System.EventHandler(this.toolStripMenuItem8_Click);
-            // 
             // btnpanelPhotoShop
             // 
             this.btnpanelPhotoShop.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnpanelPhotoShop.BackgroundImage")));
             this.btnpanelPhotoShop.ContextMenuStrip = this.contextMenuStrip7;
             this.btnpanelPhotoShop.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnpanelPhotoShop.Location = new System.Drawing.Point(326, 7);
+            this.btnpanelPhotoShop.Location = new System.Drawing.Point(297, 4);
             this.btnpanelPhotoShop.Name = "btnpanelPhotoShop";
             this.btnpanelPhotoShop.Size = new System.Drawing.Size(35, 35);
             this.btnpanelPhotoShop.TabIndex = 8;
@@ -244,7 +287,7 @@
             this.btnpanelCMD.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnpanelCMD.BackgroundImage")));
             this.btnpanelCMD.ContextMenuStrip = this.contextMenuStrip7;
             this.btnpanelCMD.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnpanelCMD.Location = new System.Drawing.Point(285, 5);
+            this.btnpanelCMD.Location = new System.Drawing.Point(256, 5);
             this.btnpanelCMD.Name = "btnpanelCMD";
             this.btnpanelCMD.Size = new System.Drawing.Size(35, 35);
             this.btnpanelCMD.TabIndex = 7;
@@ -255,7 +298,7 @@
             // 
             this.btnpanelCalc.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnpanelCalc.BackgroundImage")));
             this.btnpanelCalc.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnpanelCalc.Location = new System.Drawing.Point(247, 6);
+            this.btnpanelCalc.Location = new System.Drawing.Point(221, 6);
             this.btnpanelCalc.Name = "btnpanelCalc";
             this.btnpanelCalc.Size = new System.Drawing.Size(32, 32);
             this.btnpanelCalc.TabIndex = 6;
@@ -266,12 +309,13 @@
             // 
             this.btnSTART.BackColor = System.Drawing.Color.Transparent;
             this.btnSTART.ContextMenuStrip = this.contextMenuStrip1;
+            this.btnSTART.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnSTART.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSTART.Font = new System.Drawing.Font("Segoe UI Black", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.btnSTART.Image = ((System.Drawing.Image)(resources.GetObject("btnSTART.Image")));
-            this.btnSTART.Location = new System.Drawing.Point(3, 0);
+            this.btnSTART.Location = new System.Drawing.Point(0, 0);
             this.btnSTART.Name = "btnSTART";
-            this.btnSTART.Size = new System.Drawing.Size(43, 45);
+            this.btnSTART.Size = new System.Drawing.Size(43, 44);
             this.btnSTART.TabIndex = 0;
             this.btnSTART.UseVisualStyleBackColor = false;
             this.btnSTART.Click += new System.EventHandler(this.btnSTART_Click);
@@ -534,12 +578,72 @@
             this.btnFileExplorer.UseVisualStyleBackColor = true;
             this.btnFileExplorer.Click += new System.EventHandler(this.btnFileExplorer_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(492, 826);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_2);
+            // 
+            // cmsTaskPanel
+            // 
+            this.cmsTaskPanel.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.taskManagerToolStripMenuItem,
+            this.toolStripMenuItem9,
+            this.showToolStripMenuItem});
+            this.cmsTaskPanel.Name = "cmsTaskPanel";
+            this.cmsTaskPanel.Size = new System.Drawing.Size(149, 54);
+            // 
+            // taskManagerToolStripMenuItem
+            // 
+            this.taskManagerToolStripMenuItem.Name = "taskManagerToolStripMenuItem";
+            this.taskManagerToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.taskManagerToolStripMenuItem.Text = "Task Manager";
+            this.taskManagerToolStripMenuItem.Click += new System.EventHandler(this.taskManagerToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem9
+            // 
+            this.toolStripMenuItem9.Name = "toolStripMenuItem9";
+            this.toolStripMenuItem9.Size = new System.Drawing.Size(145, 6);
+            this.toolStripMenuItem9.Click += new System.EventHandler(this.toolStripMenuItem9_Click);
+            // 
+            // showToolStripMenuItem
+            // 
+            this.showToolStripMenuItem.Name = "showToolStripMenuItem";
+            this.showToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.showToolStripMenuItem.Text = "Show desktpo";
+            this.showToolStripMenuItem.Click += new System.EventHandler(this.showToolStripMenuItem_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(573, 826);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 17;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_2);
+            // 
+            // pnlShortcut
+            // 
+            this.pnlShortcut.Location = new System.Drawing.Point(13, 378);
+            this.pnlShortcut.Name = "pnlShortcut";
+            this.pnlShortcut.Size = new System.Drawing.Size(35, 35);
+            this.pnlShortcut.TabIndex = 18;
+            this.pnlShortcut.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.Controls.Add(this.pnlShortcut);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnFileExplorer);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnBrowser);
@@ -557,6 +661,9 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
+            this.Load += new System.EventHandler(this.Form1_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.panelTask.ResumeLayout(false);
             this.panelTask.PerformLayout();
             this.contextMenuStrip9.ResumeLayout(false);
@@ -567,6 +674,7 @@
             this.contextMenuStrip4.ResumeLayout(false);
             this.contextMenuStrip6.ResumeLayout(false);
             this.contextMenuStrip8.ResumeLayout(false);
+            this.cmsTaskPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -617,9 +725,18 @@
         private ToolStripMenuItem выйтиToolStripMenuItem;
         private Panel panel1;
         private CustomProgressBar customProgressBar1;
-        private Label label1;
         private Panel panel2;
         public Panel panelTask;
         private Button btnFileExplorer;
+        private Button button1;
+        public Label lbLang;
+        private ContextMenuStrip cmsTaskPanel;
+        private ToolStripMenuItem taskManagerToolStripMenuItem;
+        private ToolStripSeparator toolStripMenuItem9;
+        private ToolStripMenuItem showToolStripMenuItem;
+        private Button button2;
+        private Panel pnlShortcut;
+        private Button btnPanelSettings;
+        private Button btnPanelExplorer;
     }
 }

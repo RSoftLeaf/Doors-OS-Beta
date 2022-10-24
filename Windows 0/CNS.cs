@@ -39,8 +39,8 @@ namespace Windows_0
                 Admin admin = new Admin();
                 Provodnik provodnik = new Provodnik();
                 settings settingss = new settings();
-                Form1 form1 = new Form1(false);
-                BSoD bSoD = new BSoD();
+                Form1 form1 = new Form1(false, false);
+                BSoD bSoD = new BSoD(false);
                 bSoD.Show();
                 if (admin != null)
                 {
@@ -61,9 +61,48 @@ namespace Windows_0
                 wavPlayerBSODTWO.Play();
 
             }
+            else if (command == "crash")
+            {
+                for (int i = 0; i < 100; i++)
+                {
+                    tbConsoleFull.Text += "Critical error";
+                    await Task.Delay(10);
+                }
+                tbConsoleFull.ForeColor = Color.DarkRed;
+                await Task.Delay(1000);
+                SoundPlayer wavPlayerBSODONE = new SoundPlayer(@"C:\Shindaaaaa\SystemFiles.32\Audio\BSoD\blue-screen.wav");
+                SoundPlayer wavPlayerBSODTWO = new SoundPlayer(@"C:\Shindaaaaa\SystemFiles.32\Audio\BSoD\blue-screen.wav");
+                wavPlayerBSODONE.Play();
+                MessageBox.Show("Critical error", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                await Task.Delay(1000);
+                Admin admin = new Admin();
+                Provodnik provodnik = new Provodnik();
+                settings settingss = new settings();
+                Form1 form1 = new Form1(false, false);
+                BSoD bSoD = new BSoD(true);
+                bSoD.Show();
+                if (admin != null)
+                {
+                    admin.Hide();
+                }
+                if (provodnik != null)
+                {
+                    provodnik.Hide();
+                }
+                if (settingss != null)
+                {
+                    settingss.Hide();
+                }
+                if (form1 != null)
+                {
+                    form1.Hide();
+                }
+                wavPlayerBSODTWO.Play();
+            }
             else if (command == "help")
             {
-                tbConsoleFull.Text = "Del c:\\\r\n";
+                tbConsoleFull.Text = "Del c:\\\r\n" +
+                                     "crash\r\n";
             }
         }
     }

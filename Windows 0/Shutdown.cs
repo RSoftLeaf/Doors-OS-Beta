@@ -20,24 +20,36 @@ namespace Windows_0
             label1.Text = status;
             label1.Location = new System.Drawing.Point((this.Size.Width / 2) - (label1.Size.Width / 2), (this.Size.Height / 2) - label1.Size.Height); 
             ProgressShutdown(status);
-            shutdownPlayer.Play();
         }
         async void ProgressShutdown(string status)
         {
-            while (progressBar1.Value < progressBar1.Maximum)
+            if (status != "Гибернация (нет)")
             {
-                progressBar1.Value++;
-                await Task.Delay(100);
+                shutdownPlayer.Play();
+                while (progressBar1.Value < progressBar1.Maximum)
+                {
+                    progressBar1.Value++;
+                    await Task.Delay(100);
+                }
+                progressBar1.Visible = false;
+                label1.Visible = false;
+                this.BackColor = Color.Black;
+                await Task.Delay(1000);
+                if (status == "Перезагрузка")
+                    Application.Restart();
+                else if (status == "Выключение")
+                    Application.Exit();
             }
-            progressBar1.Visible = false;
-            label1.Visible = false;
-            this.BackColor = Color.Black;
-            await Task.Delay(1000);
-            if (status == "Перезагрузка")
-                Application.Restart();
             else
+            {
+                progressBar1.Value = progressBar1.Maximum;
+                await Task.Delay(400);
+                progressBar1.Visible = false;
+                label1.Visible = false;
+                this.BackColor = Color.Black;
+                await Task.Delay(1000);
                 Application.Exit();
-
+            }
         }
     }
 }

@@ -32,7 +32,7 @@ namespace Windows_0
             else if (status == "DEBUG")
             {
 
-                Form1 mainForm = new Form1(false);
+                Form1 mainForm = new Form1(false,true);
                 mainForm.Show();
                 this.Visible = false;
             }

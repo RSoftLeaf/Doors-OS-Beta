@@ -16,16 +16,26 @@ namespace Windows_0
         #region VARIABLES
 
         Form1 form1;
-
+        ImageList imgList = new ImageList();
+        
+        
         #endregion
         public Explorer(Form1 frm1)
         {
             form1 = frm1;
             InitializeComponent();
+            imgList.Images.Add(Properties.Resources.img_file);
+            imgList.Images.Add(Properties.Resources.img_folder);
+            imgList.ImageSize = new Size(64, 64);
+            
+            listView1.LargeImageList = imgList;
+            listView1.SmallImageList = imgList;
+            
             treeView1.BeforeSelect += treeView1_BeforeExpand;
             treeView1.BeforeExpand += treeView1_BeforeExpand;
             // заполняем дерево дисками
             FillDriveNodes();
+            
         }
         // событие перед раскрытием узла
         void treeView1_BeforeExpand(object sender, TreeViewCancelEventArgs e)
@@ -91,6 +101,7 @@ namespace Windows_0
                 {
                     ListViewItem dirNode = new ListViewItem();
                     dirNode.Text = dir.Remove(0, dir.LastIndexOf("\\") + 1);
+                    dirNode.ImageIndex = 1;
                     listView1.Items.Add(dirNode);
                 }
             }
@@ -101,42 +112,76 @@ namespace Windows_0
             // перебор полученных файлов
             foreach (string file in files)
             {
+                //Icon fileIcon = Icon.ExtractAssociatedIcon(file);
+                //Image image = fileIcon.ToBitmap();
                 ListViewItem lvi = new ListViewItem();
                 // установка названия файла
                 lvi.Text = file.Remove(0, file.LastIndexOf('\\') + 1);
-                lvi.ImageIndex = 0; // установка картинки для файла
+                lvi.ImageIndex = 0;// установка картинки для файла
                 // добавляем элемент в ListView
+                listView1.Items.Add(lvi);
             }
+        }
+        private void ChangeView(System.Windows.Forms.ListView lstView,View view)
+        {
+            /*
+            switch (view)
+            {
+                case View.Details:
+                    imgList.ImageSize = new Size(32, 32);
+                    break;
+
+            }
+            */
+            imgList.Images.Clear();
+            imgList.Images.Add(Properties.Resources.img_file);
+            imgList.Images.Add(Properties.Resources.img_folder);
+            if (view == View.LargeIcon || view == View.Tile)
+            {
+                imgList.ImageSize = new Size(64, 64);
+
+
+            }
+            else
+            {
+                imgList.ImageSize = new Size(32, 32);
+            }
+            //                    imgList.ImageSize = new Size(32, 32);
+            
+
+            lstView.View = view;
+
         }
 
         private void detailsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            listView1.View = View.Details;
+            ChangeView(listView1, View.Details);
         }
 
         private void largeIconToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            listView1.View = View.LargeIcon;
+            ChangeView(listView1, View.LargeIcon);
         }
 
         private void listToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            listView1.View = View.List;
+            ChangeView(listView1, View.List);
         }
 
         private void smallIconToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            listView1.View = View.SmallIcon;
+            ChangeView(listView1, View.SmallIcon);
         }
 
         private void tileToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            listView1.View = View.Tile;
+            ChangeView(listView1, View.Tile);
+
         }
 
         private void toolStripSplitButton1_ButtonClick(object sender, EventArgs e)
         {
-            listView1.View = View.LargeIcon;
+            ChangeView(listView1, View.LargeIcon);
         }
     }
 }

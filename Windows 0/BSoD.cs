@@ -14,12 +14,25 @@ namespace Windows_0
     {
         int Vitsotki = 0;
         Random random = new Random();
-        public BSoD()
+        public BSoD(bool crash)
         {
             InitializeComponent();
-        }
+            if (crash)
+            {
+                label1.Text = "Crashed";
+                label2.Visible = false;
+                CrashConsole crashConsole = new CrashConsole();
 
-        private async void BSoD_Load(object sender, EventArgs e)
+                crashConsole.Location = new System.Drawing.Point(crashConsole.Location.X, crashConsole.Location.Y + 100);
+                crashConsole.Show();
+
+            }
+            else
+            {
+                TaskDelay();
+            }
+        }
+        async void TaskDelay()
         {
             while (Vitsotki != 101)
             {
@@ -28,6 +41,11 @@ namespace Windows_0
                 Vitsotki++;
             }
             Application.Restart();
+        }
+
+        private async void BSoD_Load(object sender, EventArgs e)
+        {
+           
         }
     }
 }

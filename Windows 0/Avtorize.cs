@@ -15,23 +15,14 @@ namespace Windows_0
     {
         string UserName = "Roma";
         string PassWord = "Romanus.netus";
-        System.Windows.Forms.Timer TmrForPass = new System.Windows.Forms.Timer();
+        //System.Windows.Forms.Timer TmrForPass = new System.Windows.Forms.Timer();
         public Avtorize()
         {
             InitializeComponent();
-            TmrForPass.Tick += TmrForPass_Tick;
-            TmrForPass.Start();
             customProgressBar1.Value = 0;
         }
 
-        private void TmrForPass_Tick(object sender, EventArgs e)
-        {
-            if (checkBox1.Checked)
-                Pass.UseSystemPasswordChar = false;
-            else
-                Pass.UseSystemPasswordChar = true;
-        }
-
+        
         private async void button1_Click(object sender, EventArgs e)
         {
             if (User.Text == UserName.ToString() && Pass.Text == PassWord.ToString())
@@ -52,7 +43,7 @@ namespace Windows_0
                 {
 
                 }
-                Form1 formWindows = new Form1(true);
+                Form1 formWindows = new Form1(true, true);
                 formWindows.Show();
                 this.Visible = false;
             }
@@ -79,6 +70,14 @@ namespace Windows_0
         private void customProgressBar1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+                Pass.UseSystemPasswordChar = false;
+            else
+                Pass.UseSystemPasswordChar = true;
         }
     }
 }

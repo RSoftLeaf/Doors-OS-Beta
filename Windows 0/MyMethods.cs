@@ -1,13 +1,83 @@
 ﻿using System;
 using System.Runtime.InteropServices;
-using IWshRuntimeLibrary;
-
 public class MyMethods
 {
+    #region REGIONS
+
+    #region VARIABLES   
+
+    public InputLanguage defLang;
+    List<InputLanguage> inputLanguages = new List<InputLanguage>();
+
+    #endregion
+
+    #region LANGUAGES
+
+    /*
+    
+    "00000419" Русский
+    "00000422" Украинский
+    "00000409" Английский (США)
+    "00000407" Немецкий(стандартный)
+    
+   */
+    #endregion
+
+    #region DllImport
+
+    [DllImport("user32.dll")]
+    public static extern IntPtr GetForegroundWindow();
+
+    [DllImport("user32.dll", CharSet = CharSet.Auto)]
+    public static extern bool PostMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+
+    [DllImport("user32.dll")]
+    static extern int LoadKeyboardLayout(string pwszKLID, uint Flags);
+
+    #endregion
+
+    #region NOTCODE
+
+    /*
+        int ret = LoadKeyboardLayout(lang, 1);
+        PostMessage(GetForegroundWindow(), 0x50, 1, ret);
+        InputLanguageCollection ilc = InputLanguage.InstalledInputLanguages;
+        defLang = InputLanguage.DefaultInputLanguage;
+        foreach (InputLanguage il in ilc)
+            if (il.Culture.EnglishName.Contains("Rus"))
+                InputLanguage.CurrentInputLanguage = il;
+        
+        string lang = "00000422";
+        string iso6391TwoLetterCode = InputLanguage.CurrentInputLanguage.Culture.TwoLetterISOLanguageName;
+        int ret = LoadKeyboardLayout(lang, 1);
+        PostMessage(GetForegroundWindow(), 0x50, 1, ret);
+        /*
+        InputLanguageCollection ilc = InputLanguage.InstalledInputLanguages;
+        defLang = InputLanguage.DefaultInputLanguage;
+        foreach (InputLanguage il in ilc)
+            if (il.Culture.EnglishName.Contains("Rus"))
+                InputLanguage.CurrentInputLanguage = il;
+        MessageBox.Show(ret.ToString());
+    
+
+        InputLanguage inputLanguage = InputLanguage.CurrentInputLanguage;
+        foreach (InputLanguage il in InputLanguage.InstalledInputLanguages)
+        {
+            MessageBox.Show(il.Culture.EnglishName + " ");
+        }
+         */
+
+    #endregion
+
+    #endregion
     public MyMethods()
     {
-
+        foreach (InputLanguage il in InputLanguage.InstalledInputLanguages)
+        {
+            inputLanguages.Add(il);
+        }
     }
+    
     public void SetOpacity(Form form, System.Drawing.Point location)
     {
         form.Show();
@@ -34,4 +104,30 @@ public class MyMethods
     {
 
     }
+    public void ChangeLanguage()
+    {
+        InputLanguage currLang = InputLanguage.CurrentInputLanguage;
+        for (int i = 0; i < inputLanguages.Count; i++)
+        {
+            if (currLang.LayoutName == inputLanguages[i].LayoutName)
+            {
+                if (i == inputLanguages.Count - 1)
+                {
+                    InputLanguage.CurrentInputLanguage = inputLanguages[0];
+                }
+                else
+                {
+                    InputLanguage.CurrentInputLanguage = inputLanguages[i + 1];
+                }
+            }
+        }
+        
+
+
+    }
+    public void Test1()
+    {
+        
+    }
+
 }

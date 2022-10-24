@@ -13,10 +13,15 @@ namespace Windows_0
 {
     public partial class Provodnik : Form
     {
+        MyMethods myMethods = new MyMethods();
+        double GetWSHSize;
+        string GetWSHSizeStr;
         public Provodnik()
         {
             InitializeComponent();
-            label6.Text = $"{progressBar1.Maximum - progressBar1.Value} ГБ свободно из {progressBar1.Maximum}";
+            GetWSHSize = myMethods.GetWSHFolderSize("C:\\Shindaaaaa");
+            GetWSHSizeStr = GetWSHSize.ToString();
+            label6.Text = $"{progressBar1.Maximum - GetWSHSizeStr.Length - 9} ГБ свободно из {progressBar1.Maximum}";
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
@@ -41,8 +46,8 @@ namespace Windows_0
             Admin admin = new Admin();
             Provodnik provodnik = new Provodnik();
             settings settingss = new settings();
-            Form1 form1 = new Form1(false);
-            BSoD Sol = new BSoD();
+            Form1 form1 = new Form1(false, false);
+            BSoD Sol = new BSoD(false);
             if (admin != null)
             {
                 admin.Hide();
@@ -67,7 +72,7 @@ namespace Windows_0
 
         private void deleteToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Form1 Shind = new Form1(false);
+            Form1 Shind = new Form1(false, false);
             Shind.PhotoShop = @"/?\";
             Shind.SnapCamera = @"/?\";
             Shind.TotalCMD = @"/?\";

@@ -31,21 +31,21 @@ namespace Windows_0
 
         private void toolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            Form1 shindows = new Form1(false);
+            Form1 shindows = new Form1(false, false);
             shindows.Size = new System.Drawing.Size(1920, 1080);
             shindows.WindowState = FormWindowState.Normal;
         }
 
         private void x2160ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form1 shindows = new Form1(false);
+            Form1 shindows = new Form1(false, false);
             shindows.Size = new System.Drawing.Size(1920, 1080);
             shindows.WindowState = FormWindowState.Normal;
         }
 
         private void x1080ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form1 shindows = new Form1(false);
+            Form1 shindows = new Form1(false, false);
             shindows.Size = new System.Drawing.Size(1540, 960);
             shindows.WindowState = FormWindowState.Normal;
         }

@@ -40,7 +40,7 @@ namespace Windows_0
 
         private void завершениеРаботыToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            shutdown = new Shutdown("Завершение работы");
+            shutdown = new Shutdown("Выключение");
             shutdown.Show();
         }
 

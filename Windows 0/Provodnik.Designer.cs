@@ -182,7 +182,7 @@
             // 
             this.progressBar1.BackColor = System.Drawing.Color.Cyan;
             this.progressBar1.Location = new System.Drawing.Point(6, 67);
-            this.progressBar1.Maximum = 128;
+            this.progressBar1.Maximum = 1374389534;
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(500, 40);
             this.progressBar1.TabIndex = 1;
