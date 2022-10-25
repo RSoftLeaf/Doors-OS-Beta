@@ -118,9 +118,9 @@
             this.panelTask.Controls.Add(this.btnpanelCalc);
             this.panelTask.Controls.Add(this.btnSTART);
             this.panelTask.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelTask.Location = new System.Drawing.Point(0, 1036);
+            this.panelTask.Location = new System.Drawing.Point(0, 1040);
             this.panelTask.Name = "panelTask";
-            this.panelTask.Size = new System.Drawing.Size(1920, 44);
+            this.panelTask.Size = new System.Drawing.Size(1920, 40);
             this.panelTask.TabIndex = 4;
             // 
             // contextMenuStrip9
@@ -147,15 +147,18 @@
             // 
             // btnPanelSettings
             // 
+            this.btnPanelSettings.BackColor = System.Drawing.Color.Transparent;
             this.btnPanelSettings.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPanelSettings.BackgroundImage")));
             this.btnPanelSettings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnPanelSettings.ContextMenuStrip = this.contextMenuStrip7;
+            this.btnPanelSettings.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnPanelSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPanelSettings.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnPanelSettings.Location = new System.Drawing.Point(379, 4);
+            this.btnPanelSettings.Location = new System.Drawing.Point(240, 0);
             this.btnPanelSettings.Name = "btnPanelSettings";
-            this.btnPanelSettings.Size = new System.Drawing.Size(35, 35);
+            this.btnPanelSettings.Size = new System.Drawing.Size(40, 40);
             this.btnPanelSettings.TabIndex = 19;
-            this.btnPanelSettings.UseVisualStyleBackColor = true;
+            this.btnPanelSettings.UseVisualStyleBackColor = false;
             this.btnPanelSettings.Click += new System.EventHandler(this.btnPanelSettings_Click);
             // 
             // contextMenuStrip7
@@ -182,34 +185,40 @@
             // 
             // btnPanelExplorer
             // 
+            this.btnPanelExplorer.BackColor = System.Drawing.Color.Transparent;
             this.btnPanelExplorer.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPanelExplorer.BackgroundImage")));
             this.btnPanelExplorer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnPanelExplorer.ContextMenuStrip = this.contextMenuStrip7;
+            this.btnPanelExplorer.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnPanelExplorer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPanelExplorer.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnPanelExplorer.Location = new System.Drawing.Point(420, 4);
+            this.btnPanelExplorer.Location = new System.Drawing.Point(200, 0);
             this.btnPanelExplorer.Name = "btnPanelExplorer";
-            this.btnPanelExplorer.Size = new System.Drawing.Size(35, 35);
+            this.btnPanelExplorer.Size = new System.Drawing.Size(40, 40);
             this.btnPanelExplorer.TabIndex = 18;
-            this.btnPanelExplorer.UseVisualStyleBackColor = true;
+            this.btnPanelExplorer.UseVisualStyleBackColor = false;
             this.btnPanelExplorer.Click += new System.EventHandler(this.btnPanelExplorer_Click);
             // 
             // lbLang
             // 
             this.lbLang.AutoSize = true;
             this.lbLang.BackColor = System.Drawing.Color.Transparent;
+            this.lbLang.Dock = System.Windows.Forms.DockStyle.Right;
+            this.lbLang.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbLang.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lbLang.Location = new System.Drawing.Point(1652, 16);
+            this.lbLang.Location = new System.Drawing.Point(1297, 0);
             this.lbLang.Name = "lbLang";
-            this.lbLang.Size = new System.Drawing.Size(38, 15);
+            this.lbLang.Size = new System.Drawing.Size(106, 37);
             this.lbLang.TabIndex = 15;
             this.lbLang.Text = "label1";
             // 
             // customProgressBar1
             // 
             this.customProgressBar1.BackColor = System.Drawing.Color.Cyan;
-            this.customProgressBar1.Location = new System.Drawing.Point(1696, 10);
+            this.customProgressBar1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.customProgressBar1.Location = new System.Drawing.Point(1403, 0);
             this.customProgressBar1.Name = "customProgressBar1";
-            this.customProgressBar1.Size = new System.Drawing.Size(50, 25);
+            this.customProgressBar1.Size = new System.Drawing.Size(50, 40);
             this.customProgressBar1.Step = 1;
             this.customProgressBar1.TabIndex = 14;
             this.customProgressBar1.Value = 100;
@@ -219,10 +228,11 @@
             // 
             this.lbDate.AutoSize = true;
             this.lbDate.BackColor = System.Drawing.Color.Transparent;
-            this.lbDate.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbDate.Location = new System.Drawing.Point(1752, 20);
+            this.lbDate.Dock = System.Windows.Forms.DockStyle.Right;
+            this.lbDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbDate.Location = new System.Drawing.Point(1453, 0);
             this.lbDate.Name = "lbDate";
-            this.lbDate.Size = new System.Drawing.Size(79, 20);
+            this.lbDate.Size = new System.Drawing.Size(189, 37);
             this.lbDate.TabIndex = 13;
             this.lbDate.Text = "00:00:0000";
             // 
@@ -230,19 +240,20 @@
             // 
             this.lbTime.AutoSize = true;
             this.lbTime.BackColor = System.Drawing.Color.Transparent;
-            this.lbTime.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbTime.Location = new System.Drawing.Point(1766, 0);
+            this.lbTime.Dock = System.Windows.Forms.DockStyle.Right;
+            this.lbTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbTime.Location = new System.Drawing.Point(1642, 0);
             this.lbTime.Name = "lbTime";
-            this.lbTime.Size = new System.Drawing.Size(44, 20);
+            this.lbTime.Size = new System.Drawing.Size(103, 37);
             this.lbTime.TabIndex = 12;
             this.lbTime.Text = "00:00";
             // 
             // btnLook
             // 
-            this.btnLook.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnLook.Location = new System.Drawing.Point(143, 0);
+            this.btnLook.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnLook.Location = new System.Drawing.Point(1745, 0);
             this.btnLook.Name = "btnLook";
-            this.btnLook.Size = new System.Drawing.Size(75, 44);
+            this.btnLook.Size = new System.Drawing.Size(75, 40);
             this.btnLook.TabIndex = 12;
             this.btnLook.Text = "Найти";
             this.btnLook.UseVisualStyleBackColor = true;
@@ -250,59 +261,75 @@
             // 
             // tbProgram
             // 
-            this.tbProgram.Dock = System.Windows.Forms.DockStyle.Left;
+            this.tbProgram.Dock = System.Windows.Forms.DockStyle.Right;
             this.tbProgram.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tbProgram.Location = new System.Drawing.Point(43, 0);
+            this.tbProgram.Location = new System.Drawing.Point(1820, 0);
             this.tbProgram.Multiline = true;
             this.tbProgram.Name = "tbProgram";
-            this.tbProgram.Size = new System.Drawing.Size(100, 44);
+            this.tbProgram.Size = new System.Drawing.Size(100, 40);
             this.tbProgram.TabIndex = 11;
             // 
             // btnpanelSnap
             // 
+            this.btnpanelSnap.BackColor = System.Drawing.Color.Transparent;
             this.btnpanelSnap.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnpanelSnap.BackgroundImage")));
+            this.btnpanelSnap.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnpanelSnap.ContextMenuStrip = this.contextMenuStrip7;
+            this.btnpanelSnap.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnpanelSnap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnpanelSnap.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnpanelSnap.Location = new System.Drawing.Point(338, 4);
+            this.btnpanelSnap.Location = new System.Drawing.Point(160, 0);
             this.btnpanelSnap.Name = "btnpanelSnap";
-            this.btnpanelSnap.Size = new System.Drawing.Size(35, 35);
+            this.btnpanelSnap.Size = new System.Drawing.Size(40, 40);
             this.btnpanelSnap.TabIndex = 10;
-            this.btnpanelSnap.UseVisualStyleBackColor = true;
+            this.btnpanelSnap.UseVisualStyleBackColor = false;
             this.btnpanelSnap.Click += new System.EventHandler(this.button13_Click);
             // 
             // btnpanelPhotoShop
             // 
+            this.btnpanelPhotoShop.BackColor = System.Drawing.Color.Transparent;
             this.btnpanelPhotoShop.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnpanelPhotoShop.BackgroundImage")));
+            this.btnpanelPhotoShop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnpanelPhotoShop.ContextMenuStrip = this.contextMenuStrip7;
+            this.btnpanelPhotoShop.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnpanelPhotoShop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnpanelPhotoShop.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnpanelPhotoShop.Location = new System.Drawing.Point(297, 4);
+            this.btnpanelPhotoShop.Location = new System.Drawing.Point(120, 0);
             this.btnpanelPhotoShop.Name = "btnpanelPhotoShop";
-            this.btnpanelPhotoShop.Size = new System.Drawing.Size(35, 35);
+            this.btnpanelPhotoShop.Size = new System.Drawing.Size(40, 40);
             this.btnpanelPhotoShop.TabIndex = 8;
-            this.btnpanelPhotoShop.UseVisualStyleBackColor = true;
+            this.btnpanelPhotoShop.UseVisualStyleBackColor = false;
             this.btnpanelPhotoShop.Click += new System.EventHandler(this.button10_Click);
             // 
             // btnpanelCMD
             // 
+            this.btnpanelCMD.BackColor = System.Drawing.Color.Transparent;
             this.btnpanelCMD.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnpanelCMD.BackgroundImage")));
+            this.btnpanelCMD.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnpanelCMD.ContextMenuStrip = this.contextMenuStrip7;
+            this.btnpanelCMD.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnpanelCMD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnpanelCMD.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnpanelCMD.Location = new System.Drawing.Point(256, 5);
+            this.btnpanelCMD.Location = new System.Drawing.Point(80, 0);
             this.btnpanelCMD.Name = "btnpanelCMD";
-            this.btnpanelCMD.Size = new System.Drawing.Size(35, 35);
+            this.btnpanelCMD.Size = new System.Drawing.Size(40, 40);
             this.btnpanelCMD.TabIndex = 7;
-            this.btnpanelCMD.UseVisualStyleBackColor = true;
+            this.btnpanelCMD.UseVisualStyleBackColor = false;
             this.btnpanelCMD.Click += new System.EventHandler(this.button8_Click);
             // 
             // btnpanelCalc
             // 
+            this.btnpanelCalc.BackColor = System.Drawing.Color.Transparent;
             this.btnpanelCalc.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnpanelCalc.BackgroundImage")));
+            this.btnpanelCalc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnpanelCalc.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnpanelCalc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnpanelCalc.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnpanelCalc.Location = new System.Drawing.Point(221, 6);
+            this.btnpanelCalc.Location = new System.Drawing.Point(40, 0);
             this.btnpanelCalc.Name = "btnpanelCalc";
-            this.btnpanelCalc.Size = new System.Drawing.Size(32, 32);
+            this.btnpanelCalc.Size = new System.Drawing.Size(40, 40);
             this.btnpanelCalc.TabIndex = 6;
-            this.btnpanelCalc.UseVisualStyleBackColor = true;
+            this.btnpanelCalc.UseVisualStyleBackColor = false;
             this.btnpanelCalc.Click += new System.EventHandler(this.button6_Click);
             // 
             // btnSTART
@@ -315,7 +342,7 @@
             this.btnSTART.Image = ((System.Drawing.Image)(resources.GetObject("btnSTART.Image")));
             this.btnSTART.Location = new System.Drawing.Point(0, 0);
             this.btnSTART.Name = "btnSTART";
-            this.btnSTART.Size = new System.Drawing.Size(43, 44);
+            this.btnSTART.Size = new System.Drawing.Size(40, 40);
             this.btnSTART.TabIndex = 0;
             this.btnSTART.UseVisualStyleBackColor = false;
             this.btnSTART.Click += new System.EventHandler(this.btnSTART_Click);

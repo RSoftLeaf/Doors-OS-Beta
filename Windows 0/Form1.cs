@@ -387,58 +387,10 @@ namespace Windows_0
             // 
             this.toolStripMenuItem8.Size = new System.Drawing.Size(142, 22);
             // 
-            // btnPanelExplorer
-            // 
-            this.btnPanelExplorer.Location = new System.Drawing.Point(420, 4);
-            this.btnPanelExplorer.Size = new System.Drawing.Size(35, 35);
-            // 
-            // lbLang
-            // 
-            this.lbLang.Location = new System.Drawing.Point(1652, 16);
-            this.lbLang.Size = new System.Drawing.Size(38, 15);
-            // 
-            // customProgressBar1
-            // 
-            this.customProgressBar1.Location = new System.Drawing.Point(1696, 10);
-            this.customProgressBar1.Size = new System.Drawing.Size(50, 25);
-            // 
-            // lbDate
-            // 
-            this.lbDate.Location = new System.Drawing.Point(1752, 20);
-            this.lbDate.Size = new System.Drawing.Size(79, 20);
-            // 
-            // lbTime
-            // 
-            this.lbTime.Location = new System.Drawing.Point(1766, 0);
-            this.lbTime.Size = new System.Drawing.Size(44, 20);
-            // 
-            // btnLook
-            // 
-            this.btnLook.Location = new System.Drawing.Point(143, 0);
-            this.btnLook.Size = new System.Drawing.Size(75, 44);
-            // 
             // tbProgram
             // 
             this.tbProgram.Location = new System.Drawing.Point(43, 0);
             this.tbProgram.Size = new System.Drawing.Size(100, 44);
-            // 
-            // btnpanelSnap
-            // 
-            this.btnpanelSnap.Location = new System.Drawing.Point(338, 4);
-            this.btnpanelSnap.Size = new System.Drawing.Size(35, 35);
-            // 
-            // btnpanelPhotoShop
-            // 
-            this.btnpanelPhotoShop.Location = new System.Drawing.Point(297, 4);
-            this.btnpanelPhotoShop.Size = new System.Drawing.Size(35, 35);
-            // 
-            // btnpanelCMD
-            // 
-            this.btnpanelCMD.Location = new System.Drawing.Point(256, 5);
-            this.btnpanelCMD.Size = new System.Drawing.Size(35, 35);
-            // 
-            // btnpanelCalc
-            // 
             this.btnpanelCalc.Location = new System.Drawing.Point(221, 6);
             this.btnpanelCalc.Size = new System.Drawing.Size(32, 32);
             // 
@@ -618,6 +570,15 @@ namespace Windows_0
             // 
             this.pnlShortcut.Location = new System.Drawing.Point(13, 378);
             this.pnlShortcut.Size = new System.Drawing.Size(35, 35);
+            //
+            // this.This();
+            //
+            Size Sizepanel = new Size(40, 40);
+            this.panelTask.Size = new Size(1920, 40);
+            this.btnPanelSettings.Size = Sizepanel;
+            this.btnpanelCalc.Size = Sizepanel;
+            this.btnpanelPhotoShop.Size = Sizepanel;
+            this.btnpanelCMD.Size = Sizepanel;
             #endregion
 
             //-----------------------------------------------------------*/
