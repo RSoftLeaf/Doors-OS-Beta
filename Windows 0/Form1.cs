@@ -57,7 +57,6 @@ namespace Windows_0
         public string langCode;
         int screenWidthBounds;
         int screenHeightBounds;
-        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
 
         #endregion
         public Form1(bool play, bool Power)
